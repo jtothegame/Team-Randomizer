@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+    <h1>Welcome to the Team Randomizer!</h1>
+
+<form method="post" class="form-horizontal">
+
+  <div class="form-group">
+    <label for="names">Names:</label>
+    <textarea name="names" id="names" class="form-control"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="teams">Number Per Team:</label>
+    <input type="text" name="number" class="form-control" value="">
+  </div>
+
+  <div class="form-group">
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </div>
+
+</form>
+
+<% if (pick) { %>
+  <h2>Teams</h2>
+  <%  for (let i in newNames) { %>
+    <p><%= parseInt(i)+1 %>: <%= newNames[i].toString().split(",").join(", ") %>
+    <% } %>
+    </p>
+<% } %>
+
+
+<%- include('partials/footer') %>
